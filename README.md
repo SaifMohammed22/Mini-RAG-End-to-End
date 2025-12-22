@@ -4,7 +4,7 @@ This is a minimal end-to-end implementation of a Retrieval-Augmented Generation 
 
 ## Requirements
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 
 ### Installation
 

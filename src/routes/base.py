@@ -1,23 +1,21 @@
 """
 The base routes file
 """
-import os
-from fastapi import FastAPI, APIRouter
-
-# Load env variables from .env
-APP_NAME = os.getenv("APP_NAME") 
-APP_VERSION = os.getenv("APP_VERSION") 
+from fastapi import FastAPI, APIRouter, Depends
+from utils.config import get_settings, Settings
 
 base_router = APIRouter(
-    prefix="/api/v_1",
+    prefix="/api/v1",
     tags=["api_v1"]
 )
 
 @base_router.get('/')
-def check_health():
+async def check_health(app_settings: Settings = Depends(get_settings)):
+    app_name = app_settings.APP_NAME
+    app_version = app_settings.APP_VERSION
     return {
         'message': 'The backend is working',
-        'app': f'{APP_NAME}',
-        'version': f'{APP_VERSION}',
+        'app': f'{app_name}',
+        'version': f'{app_version}',
         'status': 200
     }

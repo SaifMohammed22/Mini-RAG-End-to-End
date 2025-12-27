@@ -2,7 +2,7 @@
 The base routes file
 """
 from fastapi import FastAPI, APIRouter, Depends
-from utils.config import get_settings, Settings
+from utils import get_settings, Settings
 
 base_router = APIRouter(
     prefix="/api/v1",

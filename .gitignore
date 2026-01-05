@@ -217,3 +217,5 @@ __marimo__/
 
 # Unneeded files
 src/assets/files/
+
+.vscode

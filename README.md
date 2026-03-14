@@ -34,3 +34,9 @@ This is a minimal end-to-end implementation of a Retrieval-Augmented Generation 
     cp .env.example .env
     ```
 3. Replace the placeholder values with your actual API keys and configurations.
+
+## Running the Application
+Start the FastAPI server using Uvicorn(fast):
+```bash
+uvicorn main:app --reload
+```

@@ -7,6 +7,7 @@ This is a minimal end-to-end implementation of a Retrieval-Augmented Generation 
 - Python 3.10 or higher
 - fastapi
 - uvicorn
+- pydantic-settings
 
 ## Installation
 
@@ -24,6 +25,7 @@ This is a minimal end-to-end implementation of a Retrieval-Augmented Generation 
     ```
 2. Install the required packages:
     ```bash
+    cd src
     pip install -r requirements.txt
     ```
 
@@ -38,5 +40,6 @@ This is a minimal end-to-end implementation of a Retrieval-Augmented Generation 
 ## Running the Application
 Start the FastAPI server using Uvicorn(fast):
 ```bash
+cd src
 uvicorn main:app --reload
 ```

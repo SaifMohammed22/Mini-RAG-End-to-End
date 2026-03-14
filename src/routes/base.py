@@ -19,3 +19,7 @@ async def check_health(app_settings: Settings = Depends(get_settings)):
         'version': f'{app_version}',
         'status': 200
     }
+
+@base_router.get('/favicon.ico')
+async def favicon():
+    return {}

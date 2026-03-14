@@ -1,0 +1,25 @@
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+
+class Settings(BaseSettings):
+
+    APP_NAME: str
+    APP_VERSION: str
+
+    FILE_ALLOWED_TYPES: list
+    FILE_MAX_SIZE: int
+    FILE_DEFAULT_CHUNK_SIZE: int
+    
+    model_config = SettingsConfigDict(env_file='.env')
+
+def get_settings() -> Settings:
+    return Settings()
+
+
+
+
+
+if __name__ == "__main__":
+    settings = get_settings()
+    print(settings.model_dump())
